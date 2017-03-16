@@ -50,6 +50,68 @@ DB_HOST=''
 # =======================================================
 APACHE2_SITES_PATH=/etc/apache2/sites-available
 
+# Generates config
+function generate_config()
+{
+  echo "This will create new project.cfg file and overwrite existing one."
+  read -p "Are you sure? (Y/n) " -n 1 -r
+  if ! [[ $REPLY =~ ^[Nn]$ ]]
+  then
+
+    # --- Config file scheme ---
+    cat <<EOF > project.cfg
+# SETTINGS
+# =======================================================
+
+# Repository
+REPO_TYPE='git|svn'
+REPO_URL=''
+REPO_USER=''
+REPO_PASS=''
+REPO_EMAIL=''
+REPO_DIR=''
+
+# Repository branch
+DEV_BRANCH='master'
+
+# Privilage for Directory - chown
+RIGHTS="${USER}:www-data"
+
+# Yii2
+ENV='Development'
+
+# Hosts
+HOSTS=('frontend.loc' 'frontend/web/' 'backend.loc' 'backend/web/')
+
+# Create DB
+DB_CREATE=true
+DB_HOST='localhost'
+DB_ROOT_PASS=''# Repository branch
+DEV_BRANCH='master'
+
+# Privilage for Directory - chown
+RIGHTS="${USER}:www-data"
+
+# Yii2
+ENV='Development'
+
+# Hosts
+HOSTS=('frontend.loc' 'frontend/web/' 'backend.loc' 'backend/web/')
+
+# Create DB
+DB_CREATE=true
+DB_HOST='localhost'
+DB_ROOT_PASS=''
+
+# DB
+DB_HOST=''
+
+EOF
+  # --- Config file scheme ---
+
+  fi
+}
+
 # Clones repository
 function clone_repository()
 {
