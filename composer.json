@@ -1,0 +1,15 @@
+{
+    "name": "reyzeer/quick-clone-yii2-project",
+    "description": "Script for quick clones yii2 project in system linux.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "reyzeer",
+            "email": "czarneckizbigniew0@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "bin":["quick-clone-yii2-project"]
+}
