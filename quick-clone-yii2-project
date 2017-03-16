@@ -305,8 +305,10 @@ function attrs()
 function run()
 {
   if [[ "$g_mode" == "CONFIG" ]]; then
+    echo 'Run generate config.'
     generate_config
   elif [[ "$g_mode" == "DOIT" ]]; then
+    echo 'Run clone project.'
     doit
   fi
 }
