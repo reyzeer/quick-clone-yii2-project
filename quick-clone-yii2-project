@@ -233,7 +233,7 @@ function add_sites()
 
 # Creates project
 # Use attributes from `project.cfg` file.
-function create_project()
+function clone_project()
 {
 
   clone_repository
